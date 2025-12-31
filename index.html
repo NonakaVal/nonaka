@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valdernir Nonaka | Data Scientist & Content Strategist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/datacamp.svg" type="image/svg+xml">
+</head>
+<body class="min-h-screen bg-gray-900 text-gray-100 font-sans antialiased pixel-font">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-sm border-b border-gray-800">
+        <div class="compact-container px-4">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-4">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-sm pixel-corners-sm hover:animate-pixelGlow">VN</span>
+                    <!-- Language Toggle Button -->
+                    <button id="language-toggle" class="text-gray-400 hover:text-white px-3 py-1.5 text-sm font-medium transition-colors hover:bg-gray-800/50 rounded-sm arcade-btn flex items-center gap-2">
+                        <i class="fas fa-language"></i>
+                        <span data-i18n="nav.language">EN</span>
+                    </button>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#about" class="text-gray-400 hover:text-white px-3 py-1.5 text-sm font-medium transition-colors hover:bg-gray-800/50 rounded-sm arcade-btn" data-i18n="nav.about">About</a>
+                    <a href="#work" class="text-gray-400 hover:text-white px-3 py-1.5 text-sm font-medium transition-colors hover:bg-gray-800/50 rounded-sm arcade-btn" data-i18n="nav.work">Work</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white px-3 py-1.5 text-sm font-medium transition-colors hover:bg-gray-800/50 rounded-sm arcade-btn" data-i18n="nav.skills">Skills</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white px-3 py-1.5 text-sm font-medium transition-colors hover:bg-gray-800/50 rounded-sm arcade-btn" data-i18n="nav.contact">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center gap-4">
+                    <!-- Language Toggle Button Mobile -->
+                    <button id="language-toggle-mobile" class="text-gray-400 hover:text-white p-2 rounded-sm hover:bg-gray-800/50 flex items-center">
+                        <i class="fas fa-language text-lg"></i>
+                    </button>
+                    <button id="menu-btn" class="text-gray-400 hover:text-white focus:outline-none p-2 rounded-sm hover:bg-gray-800/50">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 pb-3 px-4 border-t border-gray-800">
+            <a href="#about" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-sm transition-colors arcade-btn" data-i18n="nav.about">About</a>
+            <a href="#work" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-sm transition-colors arcade-btn" data-i18n="nav.work">Work</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-sm transition-colors arcade-btn" data-i18n="nav.skills">Skills</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-sm transition-colors arcade-btn" data-i18n="nav.contact">Contact</a>
+            <div class="block px-4 py-2">
+                <button id="language-toggle-mobile-full" class="text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-sm transition-colors arcade-btn flex items-center gap-2 w-full text-left">
+                    <i class="fas fa-language"></i>
+                    <span data-i18n="nav.language">EN</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 px-4 relative overflow-hidden scanlines grid-dots compact-section">
+        <div class="compact-container relative">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold text-white mb-4 leading-tight neon-text">Valdernir Nonaka</h1>
+                    <div class="flex items-center mb-6">
+                        <h2 class="text-xl md:text-2xl lg:text-l font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mr-3">
+                            <span data-i18n="hero.title">Data Scientist & Content Strategist</span>
+                        </h2>
+                        <div class="w-2 h-6 bg-blue-400 animate-pulse"></div>
+                    </div>
+                    <p class="text-gray-300 compact-text mb-8 max-w-lg terminal-text" data-i18n="hero.description">
+                        I work with data holistically—bridging analysis, automation, and content creation to drive results.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#work" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-5 py-2.5 rounded-sm font-medium transition-all duration-300 pixel-corners-sm flex items-center arcade-btn text-sm">
+                            <span data-i18n="hero.view_work">View Work</span> <i class="fas fa-arrow-down ml-2 transition-transform group-hover:translate-y-1"></i>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1LyC75l5Uz6_TWLWqjzTRpueLHoT21M5_/view" class="bg-gray-800/50 hover:bg-gray-800/70 text-white px-5 py-2.5 rounded-sm font-medium transition-all duration-300 pixel-corners-sm flex items-center arcade-btn text-sm">
+                            <span data-i18n="hero.cv">CV</span> <i class="fas fa-file-alt ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-72 md:h-72 bg-gradient-to-br from-blue-900/50 to-blue-700/50 rounded-sm flex items-center justify-center overflow-hidden border-2 border-blue-400/30 backdrop-blur-sm pixel-border">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-full h-full bg-gradient-to-br from-gray-900/30 to-gray-800/30"></div>
+                                <img src="https://cdn.myportfolio.com/e3fd7548-4007-4a3b-815a-06c294e8849d/082ffbe5-a777-45aa-88e9-f5f2f972c3fa_rw_1200.jpg?h=0b56175dd94a7a698f9698c386900ce9" alt="Valdernir Nonaka" class="w-full h-full object-cover z-10" />
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-gray-800 p-3 rounded-sm border-2 border-blue-400/30 backdrop-blur-sm shadow-lg pixel-corners-sm">
+                            <div class="flex items-center">
+                                <div class="bg-green-500 rounded-full w-2.5 h-2.5 mr-1.5 animate-pulse"></div>
+                                <span class="text-xs font-medium" data-i18n="hero.open_to_work">Open to work</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 px-4 bg-gray-900/50 backdrop-blur-sm border-t border-b border-gray-800 compact-section">
+        <div class="compact-container">
+            <h2 class="compact-heading font-bold text-white inline-block relative">
+                <span class="relative z-10 neon-text" data-i18n="about.title">About Me</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h2>
+
+            <div class="flex flex-col lg:flex-row gap-6 mt-6">
+                <!-- Left Column -->
+                <div class="lg:w-1/2 space-y-6">
+                    <!-- Profile -->
+                    <div class="bg-gray-800/50 p-5 rounded-sm border border-blue-500/20 backdrop-blur-sm pixel-border">
+                        <h3 class="text-lg font-semibold text-blue-400 mb-3" data-i18n="about.profile_title">Professional Profile</h3>
+                        <div class="space-y-3 terminal-text">
+                            <p class="text-gray-300 text-sm" data-i18n="about.profile_text">
+                                My name is Valdenir Nonaka, and I work with data in an integrated way, connecting analysis, automation, and content. love solving problems - whether in e-commerce, personal organization, or marketing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="bg-gray-800/50 p-5 rounded-sm border border-purple-500/20 backdrop-blur-sm pixel-border">
+                        <h3 class="text-lg font-semibold text-purple-400 mb-3" data-i18n="about.competencies_title">Core Competencies</h3>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency1">E-commerce Management</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency2">Content Creation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency3">Data Visualization</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency4">Marketing Analytics</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency5">Inbound Marketing</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency6">Business Intelligence</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency7">Strategic Planning</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-purple-900/20 w-1 h-4 mr-2"></div>
+                                <span class="text-gray-300 text-xs" data-i18n="about.competency8">Automation Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="lg:w-1/2 space-y-6">
+                    <!-- Certifications -->
+                    <div class="bg-gray-800/50 p-5 rounded-sm border border-green-500/20 backdrop-blur-sm pixel-border">
+                        <h3 class="text-lg font-semibold text-green-400 mb-3" data-i18n="about.education_title">Education & Certifications</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-green-900/30 p-1.5 rounded-sm mr-3 border border-green-500/20 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-graduation-cap text-green-400 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm" data-i18n="about.education1_title">Bachelor's Degree</h4>
+                                    <p class="text-gray-400 text-xs terminal-text" data-i18n="about.education1_description">Anhanguera Educational (2024-2029)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-900/30 p-1.5 rounded-sm mr-3 border border-green-500/20 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-certificate text-green-400 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm" data-i18n="about.education2_title">Associate Data Scientist</h4>
+                                    <p class="text-gray-400 text-xs terminal-text" data-i18n="about.education2_description">Datacamp (Python, 2024)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-900/30 p-1.5 rounded-sm mr-3 border border-green-500/20 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-certificate text-green-400 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm" data-i18n="about.education3_title">Data Preparation</h4>
+                                    <p class="text-gray-400 text-xs terminal-text" data-i18n="about.education3_description">Datacamp (Power BI, 2023)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-900/30 p-1.5 rounded-sm mr-3 border border-green-500/20 flex-shrink-0 mt-0.5">
+                                    <i class="fas fa-certificate text-green-400 text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white text-sm" data-i18n="about.education4_title">Marketing Scientist</h4>
+                                    <p class="text-gray-400 text-xs terminal-text" data-i18n="about.education4_description">v4 Company (2021)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Skills -->
+                    <div class="bg-gray-800/50 p-5 rounded-sm border border-yellow-500/20 backdrop-blur-sm pixel-border">
+                        <h3 class="text-lg font-semibold text-yellow-400 mb-3" data-i18n="about.technical_title">Technical Proficiencies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Python</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Power BI</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Data Analysis</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Automation</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Marketplaces</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">CRM and ERP Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-16 px-4 bg-gray-900/50 backdrop-blur-sm border-t border-b border-gray-800 scanlines compact-section">
+        <div class="compact-container">
+            <h2 class="compact-heading font-bold text-white inline-block relative">
+                <span class="relative z-10 neon-text" data-i18n="work.title">Professional Experience</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h2>
+
+            <!-- Experience Section -->
+            <div class="mb-16">
+                <!-- Collector's Guardian -->
+                <div class="bg-gray-800/50 rounded-sm overflow-hidden border border-blue-500/20 mb-6 backdrop-blur-sm pixel-border arcade-btn hover:bg-gray-800/70 transition-all duration-300 hover:-translate-y-1">
+                    <div class="p-5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                            <h3 class="text-lg font-bold text-blue-400 group-hover:text-blue-300 transition-colors" data-i18n="work.job1_title">Digital and Content Strategist</h3>
+                            <span class="text-gray-400 text-xs mt-1 md:mt-0" data-i18n="work.job1_period">2024-2025 · Full-time</span>
+                        </div>
+                        <h4 class="text-md font-medium text-white mb-2">Collector's Guardian</h4>
+                        <p class="text-gray-300 mb-3 terminal-text text-sm compact-text" data-i18n="work.job1_description">
+                            My most recent role in e-commerce was at Collector's Guardian, an experience guided by close leadership support that was essential to my learning and to the team's results. During this period, I contributed to creating scripts for Reels, supporting social media communication, and collaborating on process documentation.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 mb-3">
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm" data-i18n="work.job1_skill1">Content Strategy</span>
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm" data-i18n="work.job1_skill2">Social Media</span>
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm" data-i18n="work.job1_skill3">E-commerce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Growth Analyst -->
+                <div class="bg-gray-800/50 rounded-sm overflow-hidden border border-purple-500/20 backdrop-blur-sm pixel-border arcade-btn hover:bg-gray-800/70 transition-all duration-300 hover:-translate-y-1">
+                    <div class="p-5">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-3">
+                            <h3 class="text-lg font-bold text-purple-400 group-hover:text-purple-300 transition-colors" data-i18n="work.job2_title">Growth Analyst</h3>
+                            <span class="text-gray-400 text-xs mt-1 md:mt-0" data-i18n="work.job2_period">2023 · Consultant</span>
+                        </div>
+                        <p class="text-gray-300 mb-3 terminal-text text-sm compact-text" data-i18n="work.job2_description">
+                            Implemented growth strategies for a clothing store including online store design, Instagram campaigns, persona studies, brand identity revitalization, paid traffic testing, and CRM system implementation.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm" data-i18n="work.job2_skill1">Growth Strategy</span>
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm" data-i18n="work.job2_skill2">E-commerce</span>
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm" data-i18n="work.job2_skill3">CRM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="compact-heading font-bold text-white inline-block relative mt-16">
+                <span class="relative z-10 neon-text" data-i18n="work.projects_title">Selected Projects</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                <!-- Project 1 -->
+                <div class="bg-gray-800/50 hover:bg-gray-800/70 rounded-sm overflow-hidden border border-green-500/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm group relative h-full pixel-border arcade-btn">
+                    <div class="h-52 bg-gradient-to-r from-green-900/50 to-green-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-green-900/10 group-hover:bg-green-900/20 transition-all duration-500"></div>
+                        <i class="fas fa-store text-green-400/70 text-6xl group-hover:text-green-400 transition-all duration-300 transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-white mb-2 transition-colors group-hover:text-green-400" data-i18n="work.project1_title">E-commerce & Management</h3>
+                        <p class="text-gray-300 mb-4 compact-text terminal-text" data-i18n="work.project1_description">Collection of tools and projects for product management, data processing, and content creation for e-commerce.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded-sm font-medium border border-green-500/20 pixel-corners-sm">Streamlit</span>
+                            <span class="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded-sm font-medium border border-green-500/20 pixel-corners-sm">Python</span>
+                            <span class="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded-sm font-medium border border-green-500/20 pixel-corners-sm">Jupyter</span>
+                            <span class="bg-green-900/30 text-green-400 text-xs px-2 py-1 rounded-sm font-medium border border-green-500/20 pixel-corners-sm">Selenium</span>
+                        </div>
+                        <a href="https://github.com/NonakaVal/ProductManagement" target="_blank" class="text-green-400 font-medium hover:text-green-300 flex items-center group transition-colors text-sm arcade-btn">
+                            <span data-i18n="work.project1_link1">Streamlit Product Management app</span> <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="https://github.com/NonakaVal/ign_news_scraping" target="_blank" class="text-green-400 font-medium hover:text-green-300 flex items-center group transition-colors text-sm arcade-btn">
+                            <span data-i18n="work.project1_link2">News Scraping</span> <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-gray-800/50 hover:bg-gray-800/70 rounded-sm overflow-hidden border border-yellow-500/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm group relative h-full pixel-border arcade-btn">
+                    <div class="h-52 bg-gradient-to-r from-yellow-900/50 to-yellow-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-yellow-900/10 group-hover:bg-yellow-900/20 transition-all duration-500"></div>
+                        <i class="fas fa-chart-bar text-yellow-400/70 text-6xl group-hover:text-yellow-400 transition-all duration-300 transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-white mb-2 transition-colors group-hover:text-yellow-400" data-i18n="work.project2_title">Business Dashboards</h3>
+                        <p class="text-gray-300 mb-4 compact-text terminal-text" data-i18n="work.project2_description">Interactive Power BI dashboards for business intelligence and data visualization.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Power BI</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Data Visualization</span>
+                            <span class="bg-yellow-900/30 text-yellow-400 text-xs px-2 py-1 rounded-sm font-medium border border-yellow-500/20 pixel-corners-sm">Business Intelligence</span>
+                        </div>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNjQ2ODQ4YmQtMDhlYi00ZjhhLTkyOWItMzYyMDVhOThiZmEzIiwidCI6IjlkNzVmMWI5LTk0NzQtNDlhOS04NTE0LTY3NzhkZGY1OThmMCIsImMiOjN9" target="_blank" class="mt-2 text-yellow-400 font-medium hover:text-yellow-300 flex items-center group transition-colors text-sm arcade-btn">
+                            <span data-i18n="work.project2_link">View Dashboard</span><i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-gray-800/50 hover:bg-gray-800/70 rounded-sm overflow-hidden border border-blue-500/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm group relative h-full pixel-border arcade-btn">
+                    <div class="h-52 bg-gradient-to-r from-blue-900/50 to-blue-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/20 transition-all duration-500"></div>
+                        <i class="fas fa-robot text-blue-400/70 text-6xl group-hover:text-blue-400 transition-all duration-300 transform group-hover:scale-110"></i>
+                        <div class="absolute bottom-3 right-3 bg-gray-800/90 px-2 py-0.5 rounded-sm text-xs font-medium pixel-corners-sm" data-i18n="work.project3_tag">
+                            AI Research
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-white mb-2 transition-colors group-hover:text-blue-400" data-i18n="work.project3_title">Data Science & AI</h3>
+                        <p class="text-gray-300 mb-4 compact-text terminal-text" data-i18n="work.project3_description">Machine learning models, AI agents, and data analysis projects including loan approval prediction and sales forecasting.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm">Python</span>
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm">Machine Learning</span>
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm">LLMs</span>
+                            <span class="bg-blue-900/30 text-blue-400 text-xs px-2 py-1 rounded-sm font-medium border border-blue-500/20 pixel-corners-sm">CrewAI</span>
+                        </div>
+                        <a href="https://valdenirnonaka.myportfolio.com/analises-dados-e-machine-learning-1" target="_blank" class="text-blue-400 font-medium hover:text-blue-300 flex items-center group transition-colors text-sm arcade-btn">
+                            <span data-i18n="work.project3_link">View Projects</span> <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-gray-800/50 hover:bg-gray-800/70 rounded-sm overflow-hidden border border-purple-500/20 transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm group relative h-full pixel-border arcade-btn">
+                    <div class="h-52 bg-gradient-to-r from-purple-900/50 to-purple-700/50 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-purple-900/10 group-hover:bg-purple-900/20 transition-all duration-500"></div>
+                        <i class="fas fa-book text-purple-400/70 text-6xl group-hover:text-purple-400 transition-all duration-300 transform group-hover:scale-110"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-xl font-bold text-white mb-2 transition-colors group-hover:text-purple-400" data-i18n="work.project4_title">PKM & Content</h3>
+                        <p class="text-gray-300 mb-4 compact-text terminal-text" data-i18n="work.project4_description">Personal knowledge management systems and educational content about productivity and learning.</p>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm">Obsidian</span>
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm">PKM</span>
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm">Education</span>
+                            <span class="bg-purple-900/30 text-purple-400 text-xs px-2 py-1 rounded-sm font-medium border border-purple-500/20 pixel-corners-sm">Content Creation</span>
+                        </div>
+                        <a href="https://github.com/NonakaVal/MyObsidianSetup" target="_blank" class="text-purple-400 font-medium hover:text-purple-300 flex items-center group transition-colors text-sm arcade-btn">
+                            <span data-i18n="work.project4_link1">View Setup</span> <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@nonaka96" target="_blank" class="mt-2 text-purple-400 font-medium hover:text-purple-300 flex items-center group transition-colors text-sm arcade-btn">
+                            <span data-i18n="work.project4_link2">YouTube Channel</span> <i class="fab fa-youtube ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://valdenirnonaka.myportfolio.com/" target="_blank" class="bg-gray-800/50 hover:bg-gray-800/70 text-white px-6 py-3 rounded-sm font-medium transition-colors inline-flex items-center pixel-corners-sm text-sm arcade-btn">
+                    <span data-i18n="work.view_all">View All Projects</span> <i class="fas fa-chevron-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-12 px-4 bg-gray-900/50 backdrop-blur-sm border-t border-b border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-8 relative inline-block">
+                <span class="relative z-10 neon-text" data-i18n="skills.title">Skills & Expertise</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h2>
+
+            <!-- Main Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <!-- Technical Skills -->
+                <div class="bg-gray-800/50 p-5 rounded-sm border border-blue-500/20 backdrop-blur-sm pixel-border hover:border-blue-500/40 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900/30 p-2 rounded-sm mr-3 border border-blue-500/20">
+                            <i class="fas fa-code text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white" data-i18n="skills.technical_title">Technical Skills</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="text-blue-300 text-sm font-semibold mb-2" data-i18n="skills.data_science">Data Science</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Python</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Pandas</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Seaborn</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Streamlit</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">CrewAI</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-blue-300 text-sm font-semibold mb-2" data-i18n="skills.data_viz">Data Visualization</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Power BI</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Plotly</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">Google Sheets</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-blue-300 text-sm font-semibold mb-2" data-i18n="skills.development">Development</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">HTML5</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">CSS3</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">JavaScript</span>
+                                <span class="skill-tag bg-blue-900/30 text-blue-400">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce & Marketing -->
+                <div class="bg-gray-800/50 p-5 rounded-sm border border-purple-500/20 backdrop-blur-sm pixel-border hover:border-purple-500/40 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-900/30 p-2 rounded-sm mr-3 border border-purple-500/20">
+                            <i class="fas fa-store text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white" data-i18n="skills.ecommerce_title">E-commerce & Marketing</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="text-purple-300 text-sm font-semibold mb-2" data-i18n="skills.platforms">Platforms</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-purple-900/30 text-purple-400">Mercado Livre</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400">Olist</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400">GA4</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-purple-300 text-sm font-semibold mb-2" data-i18n="skills.marketing">Marketing</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-purple-900/30 text-purple-400" data-i18n="skills.marketing1">Inbound Marketing</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400" data-i18n="skills.marketing2">Content Strategy</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400">SEO</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400" data-i18n="skills.marketing3">Branding</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-purple-300 text-sm font-semibold mb-2" data-i18n="skills.business">Business</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-purple-900/30 text-purple-400" data-i18n="skills.business1">Business Intelligence</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400" data-i18n="skills.business2">Strategic Planning</span>
+                                <span class="skill-tag bg-purple-900/30 text-purple-400" data-i18n="skills.business3">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative & Tools -->
+                <div class="bg-gray-800/50 p-5 rounded-sm border border-green-500/20 backdrop-blur-sm pixel-border hover:border-green-500/40 transition-all duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-900/30 p-2 rounded-sm mr-3 border border-green-500/20">
+                            <i class="fas fa-tools text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white" data-i18n="skills.creative_title">Creative & Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="text-green-300 text-sm font-semibold mb-2" data-i18n="skills.content">Content Creation</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-green-900/30 text-green-400" data-i18n="skills.content1">Video Production</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">DaVinci Resolve</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">CapCut</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">Canva</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-green-300 text-sm font-semibold mb-2" data-i18n="skills.productivity">Productivity</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-green-900/30 text-green-400">Notion</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">Obsidian</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">Trello</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">VS Code</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-green-300 text-sm font-semibold mb-2" data-i18n="skills.other">Other</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-tag bg-green-900/30 text-green-400">Scrapy</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">Git</span>
+                                <span class="skill-tag bg-green-900/30 text-green-400">Jupyter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-gray-900/50 backdrop-blur-sm border-t border-b border-gray-800 compact-section">
+        <div class="compact-container">
+            <h2 class="compact-heading font-bold text-white inline-block relative">
+                <span class="relative z-10 neon-text" data-i18n="contact.title">Get In Touch</span>
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"></span>
+            </h2>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="w-full">
+                    <h3 class="compact-subheading font-semibold text-white" data-i18n="contact.subtitle">Contact Information</h3>
+                    <p class="text-gray-300 mb-8 compact-text terminal-text" data-i18n="contact.description">Interested in working together? Have questions about my work? Reach out and let's discuss how I can help with your data and content needs.</p>
+
+                    <div class="space-y-5">
+                        <div class="bg-gray-800/50 p-4 rounded-sm border border-green-500/20 backdrop-blur-sm hover:border-green-500/40 transition-colors group pixel-border arcade-btn">
+                            <div class="flex items-center">
+                                <div class="bg-blue-900/30 p-2 rounded-sm mr-4 border border-green-500/20 group-hover:bg-blue-900/50 transition-colors flex-shrink-0">
+                                    <i class="fab fa-linkedin text-blue-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-0.5">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/valdenir-nonaka-349877367/" class="text-blue-400 hover:text-green-300 transition-colors text-sm arcade-btn" data-i18n="contact.linkedin_text">
+                                        Access Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/50 p-4 rounded-sm border border-green-500/20 backdrop-blur-sm hover:border-green-500/40 transition-colors group pixel-border arcade-btn">
+                            <div class="flex items-center">
+                                <div class="bg-green-900/30 p-2 rounded-sm mr-4 border border-green-500/20 group-hover:bg-green-900/50 transition-colors flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-green-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-0.5">WhatsApp</h4>
+                                    <a href="https://wa.me/5515998304344" class="text-green-400 hover:text-green-300 transition-colors text-sm arcade-btn">+55 (15) 998304-3444</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800/50 p-4 rounded-sm border border-blue-500/20 backdrop-blur-sm hover:border-blue-500/40 transition-colors group pixel-border arcade-btn">
+                            <div class="flex items-center">
+                                <div class="bg-blue-900/30 p-2 rounded-sm mr-4 border border-blue-500/20 group-hover:bg-blue-900/50 transition-colors flex-shrink-0">
+                                    <i class="fas fa-envelope text-blue-400 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-white mb-0.5" data-i18n="contact.email_title">Email</h4>
+                                    <a href="mailto:valdenirnonaka@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors text-sm arcade-btn">valdenirnonaka@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h4 class="font-medium text-white mb-4" data-i18n="contact.connect">Connect With Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.instagram.com/nonaka.val/" target="_blank" class="bg-gray-800/50 hover:bg-gray-800/70 p-3 rounded-sm w-10 h-10 flex items-center justify-center border border-pink-500/20 transition-colors backdrop-blur-sm hover:border-pink-500/40 group pixel-border arcade-btn">
+                                <i class="fab fa-instagram text-pink-400 text-base group-hover:text-pink-300"></i>
+                            </a>
+                            <a href="https://github.com/NonakaVal/" target="_blank" class="bg-gray-800/50 hover:bg-gray-800/70 p-3 rounded-sm w-10 h-10 flex items-center justify-center border border-blue-500/20 transition-colors backdrop-blur-sm hover:border-blue-500/40 group pixel-border arcade-btn">
+                                <i class="fab fa-github text-blue-400 text-base group-hover:text-blue-300"></i>
+                            </a>
+                            <a href="https://medium.com/@valdenirnonaka" target="_blank" class="bg-gray-800/50 hover:bg-gray-800/70 p-3 rounded-sm w-10 h-10 flex items-center justify-center border border-gray-500/20 transition-colors backdrop-blur-sm hover:border-gray-500/40 group pixel-border arcade-btn">
+                                <i class="fab fa-medium text-gray-400 text-base group-hover:text-gray-300"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCrCuxJ6UPoKYKsz30fRDlzA" target="_blank" class="bg-gray-800/50 hover:bg-gray-800/70 p-3 rounded-sm w-10 h-10 flex items-center justify-center border border-red-500/20 transition-colors backdrop-blur-sm hover:border-red-500/40 group pixel-border arcade-btn">
+                                <i class="fab fa-youtube text-red-400 text-base group-hover:text-red-300"></i>
+                            </a>
+                            <a href="https://www.reddit.com/user/Ok_Blacksmith7269/" target="_blank" class="bg-gray-800/50 hover:bg-gray-800/70 p-3 rounded-sm w-10 h-10 flex items-center justify-center border border-orange-500/20 transition-colors backdrop-blur-sm hover:border-orange-500/40 group pixel-border arcade-btn">
+                                <i class="fab fa-reddit-alien text-orange-400 text-base group-hover:text-orange-300"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 border-t border-gray-800 compact-section">
+        <div class="compact-container">
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-base font-semibold text-white mb-4" data-i18n="footer.navigation">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="hover:text-white transition-colors text-sm arcade-btn" data-i18n="nav.about">About</a></li>
+                            <li><a href="#work" class="hover:text-white transition-colors text-sm arcade-btn" data-i18n="nav.work">Work</a></li>
+                            <li><a href="#skills" class="hover:text-white transition-colors text-sm arcade-btn" data-i18n="nav.skills">Skills</a></li>
+                            <li><a href="#contact" class="hover:text-white transition-colors text-sm arcade-btn" data-i18n="nav.contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+                <p class="text-xs terminal-text" data-i18n="footer.copyright">&copy; 2025 Valdernir Nonaka. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Translation data
+        const translations = {
+            'en': {
+                // Navigation
+                'nav.about': 'About',
+                'nav.work': 'Work',
+                'nav.skills': 'Skills',
+                'nav.contact': 'Contact',
+                'nav.language': 'EN',
+                
+                // Hero Section
+                'hero.title': 'Data Scientist & Content Strategist',
+                'hero.description': 'I work with data holistically—bridging analysis, automation, and content creation to drive results.',
+                'hero.view_work': 'View Work',
+                'hero.cv': 'CV',
+                'hero.open_to_work': 'Open to work',
+                
+                // About Section
+                'about.title': 'About Me',
+                'about.profile_title': 'Professional Profile',
+                'about.profile_text': 'My name is Valdenir Nonaka, and I work with data in an integrated way, connecting analysis, automation, and content. love solving problems - whether in e-commerce, personal organization, or marketing.',
+                'about.competencies_title': 'Core Competencies',
+                'about.competency1': 'E-commerce Management',
+                'about.competency2': 'Content Creation',
+                'about.competency3': 'Data Visualization',
+                'about.competency4': 'Marketing Analytics',
+                'about.competency5': 'Inbound Marketing',
+                'about.competency6': 'Business Intelligence',
+                'about.competency7': 'Strategic Planning',
+                'about.competency8': 'Automation Solutions',
+                'about.education_title': 'Education & Certifications',
+                'about.education1_title': 'Bachelor\'s Degree',
+                'about.education1_description': 'Anhanguera Educational (2024-2029)',
+                'about.education2_title': 'Associate Data Scientist',
+                'about.education2_description': 'Datacamp (Python, 2024)',
+                'about.education3_title': 'Data Preparation',
+                'about.education3_description': 'Datacamp (Power BI, 2023)',
+                'about.education4_title': 'Marketing Scientist',
+                'about.education4_description': 'v4 Company (2021)',
+                'about.technical_title': 'Technical Proficiencies',
+                
+                // Work Section
+                'work.title': 'Professional Experience',
+                'work.job1_title': 'Digital and Content Strategist',
+                'work.job1_period': '2024-2025 · Full-time',
+                'work.job1_description': 'My most recent role in e-commerce was at Collector\'s Guardian, an experience guided by close leadership support that was essential to my learning and to the team\'s results. During this period, I contributed to creating scripts for Reels, supporting social media communication, and collaborating on process documentation.',
+                'work.job1_skill1': 'Content Strategy',
+                'work.job1_skill2': 'Social Media',
+                'work.job1_skill3': 'E-commerce',
+                'work.job2_title': 'Growth Analyst',
+                'work.job2_period': '2023 · Consultant',
+                'work.job2_description': 'Implemented growth strategies for a clothing store including online store design, Instagram campaigns, persona studies, brand identity revitalization, paid traffic testing, and CRM system implementation.',
+                'work.job2_skill1': 'Growth Strategy',
+                'work.job2_skill2': 'E-commerce',
+                'work.job2_skill3': 'CRM',
+                'work.instagram': 'Instagram',
+                'work.video_portfolio': 'Video Portfolio',
+                'work.projects_title': 'Selected Projects',
+                'work.project1_title': 'E-commerce & Management',
+                'work.project1_description': 'Collection of tools and projects for product management, data processing, and content creation for e-commerce.',
+                'work.project1_link1': 'Streamlit Product Management app',
+                'work.project1_link2': 'News Scraping',
+                'work.project2_title': 'Business Dashboards',
+                'work.project2_description': 'Interactive Power BI dashboards for business intelligence and data visualization.',
+                'work.project2_link': 'View Dashboard',
+                'work.project3_title': 'Data Science & AI',
+                'work.project3_description': 'Machine learning models, AI agents, and data analysis projects including loan approval prediction and sales forecasting.',
+                'work.project3_tag': 'AI Research',
+                'work.project3_link': 'View Projects',
+                'work.project4_title': 'PKM & Content',
+                'work.project4_description': 'Personal knowledge management systems and educational content about productivity and learning.',
+                'work.project4_link1': 'View Setup',
+                'work.project4_link2': 'YouTube Channel',
+                'work.view_all': 'View All Projects',
+                
+                // Skills Section
+                'skills.title': 'Skills & Expertise',
+                'skills.technical_title': 'Technical Skills',
+                'skills.data_science': 'Data Science',
+                'skills.data_viz': 'Data Visualization',
+                'skills.development': 'Development',
+                'skills.ecommerce_title': 'E-commerce & Marketing',
+                'skills.platforms': 'Platforms',
+                'skills.marketing': 'Marketing',
+                'skills.marketing1': 'Inbound Marketing',
+                'skills.marketing2': 'Content Strategy',
+                'skills.marketing3': 'Branding',
+                'skills.business': 'Business',
+                'skills.business1': 'Business Intelligence',
+                'skills.business2': 'Strategic Planning',
+                'skills.business3': 'Automation',
+                'skills.creative_title': 'Creative & Tools',
+                'skills.content': 'Content Creation',
+                'skills.content1': 'Video Production',
+                'skills.productivity': 'Productivity',
+                'skills.other': 'Other',
+                
+                // Contact Section
+                'contact.title': 'Get In Touch',
+                'contact.subtitle': 'Contact Information',
+                'contact.description': 'Interested in working together? Have questions about my work? Reach out and let\'s discuss how I can help with your data and content needs.',
+                'contact.linkedin_text': 'Access Profile',
+                'contact.email_title': 'Email',
+                'contact.connect': 'Connect With Me',
+                
+                // Footer
+                'footer.navigation': 'Navigation',
+                'footer.copyright': '© 2025 Valdernir Nonaka. All rights reserved.'
+            },
+            'pt-br': {
+                // Navigation
+                'nav.about': 'Sobre',
+                'nav.work': 'Trabalho',
+                'nav.skills': 'Habilidades',
+                'nav.contact': 'Contato',
+                'nav.language': 'PT',
+                
+                // Hero Section
+                'hero.title': 'Cientista de Dados & Estrategista de Conteúdo',
+                'hero.description': 'Trabalho com dados de forma holística — conectando análise, automação e criação de conteúdo para gerar resultados.',
+                'hero.view_work': 'Ver Trabalhos',
+                'hero.cv': 'Currículo',
+                'hero.open_to_work': 'Disponível para trabalho',
+                
+                // About Section
+                'about.title': 'Sobre Mim',
+                'about.profile_title': 'Perfil Profissional',
+                'about.profile_text': 'Meu nome é Valdenir Nonaka, e trabalho com dados de forma integrada, conectando análise, automação e conteúdo. Amo resolver problemas — seja em e-commerce, organização pessoal ou marketing.',
+                'about.competencies_title': 'Competências Principais',
+                'about.competency1': 'Gestão de E-commerce',
+                'about.competency2': 'Criação de Conteúdo',
+                'about.competency3': 'Visualização de Dados',
+                'about.competency4': 'Análise de Marketing',
+                'about.competency5': 'Marketing de Atração',
+                'about.competency6': 'Business Intelligence',
+                'about.competency7': 'Planejamento Estratégico',
+                'about.competency8': 'Soluções de Automação',
+                'about.education_title': 'Educação & Certificações',
+                'about.education1_title': 'Bacharelado',
+                'about.education1_description': 'Anhanguera Educacional (2024-2029)',
+                'about.education2_title': 'Associate Data Scientist',
+                'about.education2_description': 'Datacamp (Python, 2024)',
+                'about.education3_title': 'Preparação de Dados',
+                'about.education3_description': 'Datacamp (Power BI, 2023)',
+                'about.education4_title': 'Marketing Scientist',
+                'about.education4_description': 'v4 Company (2021)',
+                'about.technical_title': 'Proficiências Técnicas',
+                
+                // Work Section
+                'work.title': 'Experiência Profissional',
+                'work.job1_title': 'Estrategista Digital e de Conteúdo',
+                'work.job1_period': '2024-2025 · Período integral',
+                'work.job1_description': 'Minha atuação mais recente em e-commerce foi na Collector\'s Guardian, uma experiência guiada por apoio próximo da liderança que foi essencial para meu aprendizado e para os resultados da equipe. Nesse período, contribuí com a criação de scripts para Reels, suporte à comunicação em redes sociais e colaboração na documentação de processos.',
+                'work.job1_skill1': 'Estratégia de Conteúdo',
+                'work.job1_skill2': 'Mídias Sociais',
+                'work.job1_skill3': 'E-commerce',
+                'work.job2_title': 'Analista de Growth',
+                'work.job2_period': '2023 · Consultor',
+                'work.job2_description': 'Implementei estratégias de crescimento para uma loja de roupas incluindo design de loja online, campanhas no Instagram, estudos de persona, revitalização de identidade da marca, testes de tráfego pago e implementação de sistema CRM.',
+                'work.job2_skill1': 'Estratégia de Crescimento',
+                'work.job2_skill2': 'E-commerce',
+                'work.job2_skill3': 'CRM',
+                'work.instagram': 'Instagram',
+                'work.video_portfolio': 'Portfólio em Vídeo',
+                'work.projects_title': 'Projetos Selecionados',
+                'work.project1_title': 'E-commerce & Gestão',
+                'work.project1_description': 'Coleção de ferramentas e projetos para gestão de produtos, processamento de dados e criação de conteúdo para e-commerce.',
+                'work.project1_link1': 'App Streamlit de Gestão de Produtos',
+                'work.project1_link2': 'Coleta de Notícias',
+                'work.project2_title': 'Dashboards Empresariais',
+                'work.project2_description': 'Dashboards interativos do Power BI para business intelligence e visualização de dados.',
+                'work.project2_link': 'Ver Dashboard',
+                'work.project3_title': 'Data Science & IA',
+                'work.project3_description': 'Modelos de machine learning, agentes de IA e projetos de análise de dados incluindo previsão de aprovação de empréstimos e previsão de vendas.',
+                'work.project3_tag': 'Pesquisa em IA',
+                'work.project3_link': 'Ver Projetos',
+                'work.project4_title': 'PKM & Conteúdo',
+                'work.project4_description': 'Sistemas de gestão de conhecimento pessoal e conteúdo educacional sobre produtividade e aprendizado.',
+                'work.project4_link1': 'Ver Configuração',
+                'work.project4_link2': 'Canal do YouTube',
+                'work.view_all': 'Ver Todos os Projetos',
+                
+                // Skills Section
+                'skills.title': 'Habilidades & Expertise',
+                'skills.technical_title': 'Habilidades Técnicas',
+                'skills.data_science': 'Data Science',
+                'skills.data_viz': 'Visualização de Dados',
+                'skills.development': 'Desenvolvimento',
+                'skills.ecommerce_title': 'E-commerce & Marketing',
+                'skills.platforms': 'Plataformas',
+                'skills.marketing': 'Marketing',
+                'skills.marketing1': 'Marketing de Atração',
+                'skills.marketing2': 'Estratégia de Conteúdo',
+                'skills.marketing3': 'Branding',
+                'skills.business': 'Negócios',
+                'skills.business1': 'Business Intelligence',
+                'skills.business2': 'Planejamento Estratégico',
+                'skills.business3': 'Automação',
+                'skills.creative_title': 'Criativo & Ferramentas',
+                'skills.content': 'Criação de Conteúdo',
+                'skills.content1': 'Produção de Vídeo',
+                'skills.productivity': 'Produtividade',
+                'skills.other': 'Outros',
+                
+                // Contact Section
+                'contact.title': 'Entre em Contato',
+                'contact.subtitle': 'Informações de Contato',
+                'contact.description': 'Interessado em trabalhar junto? Tem perguntas sobre meu trabalho? Entre em contato e vamos discutir como posso ajudar com suas necessidades de dados e conteúdo.',
+                'contact.linkedin_text': 'Acessar Perfil',
+                'contact.email_title': 'E-mail',
+                'contact.connect': 'Conecte-se Comigo',
+                
+                // Footer
+                'footer.navigation': 'Navegação',
+                'footer.copyright': '© 2025 Valdernir Nonaka. Todos os direitos reservados.'
+            }
+        };
+
+        // Language management
+        let currentLang = 'en';
+        const savedLang = localStorage.getItem('preferredLang');
+        
+        if (savedLang && translations[savedLang]) {
+            currentLang = savedLang;
+        } else {
+            // Detect browser language
+            const browserLang = navigator.language.toLowerCase();
+            if (browserLang.startsWith('pt')) {
+                currentLang = 'pt-br';
+            }
+        }
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+            
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else if (element.hasAttribute('placeholder')) {
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Update button text
+            document.querySelectorAll('[data-i18n="nav.language"]').forEach(el => {
+                el.textContent = lang === 'en' ? 'EN' : 'PT';
+            });
+            
+            // Update html lang attribute
+            document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+            
+            // Update page title
+            document.title = lang === 'en' 
+                ? 'Valdernir Nonaka | Data Scientist & Content Strategist'
+                : 'Valdernir Nonaka | Cientista de Dados & Estrategista de Conteúdo';
+        }
+
+        // Initialize language
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLang);
+            
+            // Add event listeners to language toggle buttons
+            document.querySelectorAll('#language-toggle, #language-toggle-mobile, #language-toggle-mobile-full').forEach(button => {
+                button.addEventListener('click', () => {
+                    const newLang = currentLang === 'en' ? 'pt-br' : 'en';
+                    setLanguage(newLang);
+                });
+            });
+            
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (event) => {
+                    if (!menuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
